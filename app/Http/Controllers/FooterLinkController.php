@@ -128,8 +128,6 @@ class FooterLinkController extends Controller
     {
         $footerLink->delete();
 
-        Alert::success('Berhasil', 'Tautan Footer berhasil dihapus!');
-
-        return back();
+        return redirect()->back()->with('success', 'Tautan footer berhasil dihapus!');
     }
 }
