@@ -51,9 +51,9 @@ class NewsController extends Controller
         $messages = [
             'title.required'        => 'Judul berita wajib diisi',
             'content.required'      => 'Konten berita wajib diisi',
-            'cover_image.required'  => 'Sampul jurusan wajib diisi',
-            'cover_image.image'     => 'Sampul jurusan harus berupa gambar',
-            'cover_image.mimes'     => 'Sampul jurusan harus berformat gambar (jpeg, png atau jpg)',
+            'cover_image.required'  => 'Sampul berita wajib diisi',
+            'cover_image.image'     => 'Sampul berita harus berupa gambar',
+            'cover_image.mimes'     => 'Sampul berita harus berformat gambar (jpeg, png atau jpg)',
             'status.required'       => 'Status berita wajib diisi',
         ];
 
@@ -66,7 +66,7 @@ class NewsController extends Controller
         // PROSES UPLOAD cover_image DISINI
         $cover_image = $request->file('cover_image');
         $filename = time() . '.jpg';
-        $upload_filepath = 'news'; // Update the upload directory as per your requirement
+        $upload_filepath = 'public/news'; // Update the upload directory as per your requirement
         $path = $cover_image->storeAs($upload_filepath, $filename);
 
         $data = $request->all();
@@ -138,7 +138,7 @@ class NewsController extends Controller
             // PROSES UPLOAD cover_image DISINI
             $cover_image = $request->file('cover_image');
             $filename = time() . '.jpg';
-            $upload_filepath = 'news'; // Update the upload directory as per your requirement
+            $upload_filepath = 'public/news'; // Update the upload directory as per your requirement
             $path = $cover_image->storeAs($upload_filepath, $filename);
             unset($data['cover_image']);
             $data['cover_image'] = Storage::url($path);

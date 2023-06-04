@@ -5,9 +5,7 @@
 @push('addon-style')
 	<link rel="stylesheet" href="{{ asset('panel-assets/node_modules/select2/dist/css/select2.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('panel-assets/node_modules/selectric/public/selectric.css') }}">
-    <style>
-        .ce-block__content, .ce-toolbar__content { max-width:calc(100% - 100px) !important; } .cdx-block { max-width: 100% !important; }
-    </style>
+	<link rel="stylesheet" href="{{ asset('panel-assets/node_modules/summernote/dist/summernote-bs4.css') }}">
 @endpush
 
 @section('content')
@@ -37,7 +35,7 @@
                             </div>
                         </div>
                     @endif
-                    <form action="{{ route('admin-panel.news.update', $news->id) }}" onsubmit="return editorJsSave()" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('admin-panel.news.update', $news->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
 						@method('PUT')
                         <div class="card">
@@ -59,8 +57,7 @@
                                 </div>
 								<div class="form-group">
 									<label for="content">Konten Berita <span class="text-danger">*</span></label>
-									<div id="editorjs"></div>
-                                    <input type="hidden" name="content" id="news_content" value="">
+									<textarea class="summernote" name="content" id="content">{!! $news->content !!}</textarea>
 								</div>
                                 <div class="form-group">
                                     <label for="status">Status<span class="text-danger">*</span></label>
@@ -83,87 +80,7 @@
 @push('addon-script')
 	<script src="{{ asset('panel-assets/node_modules/select2/dist/js/select2.full.min.js') }}"></script>
 	<script src="{{ asset('panel-assets/node_modules/selectric/public/jquery.selectric.min.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/editorjs-text-alignment-blocktune@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/raw"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.8.1/dist/bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
-    <script>
-        function editorJsSave() {
-            window.editor.save().then((outputData) => {
-                console.log('Article data: ', outputData)
-                $("#news_content").val(JSON.stringify(outputData));
-                return true;
-            }).catch((error) => {
-                console.log('Saving failed: ', error)
-                return false;
-            });
-        }
-        $(document).ready(function(){
-            window.editor = new EditorJS({
-            /**
-             * Id of Element that should contain the Editor
-             */
-            holderId : 'editorjs',
-            tools: {
-                header: {
-                    class: Header,
-                    tunes: ['alignment'],
-                },
-                raw: RawTool,
-                paragraph: {
-                    class: Paragraph,
-                    inlineToolbar: true,
-                    tunes: ['alignment'],
-                },
-                alignment: {
-                    class:AlignmentBlockTune,
-                    config:{
-                        default: "left",
-                        blocks: {
-                            header: 'center',
-                            list: 'right'
-                        }
-                    },
-                },
-                checklist:{
-                    class: Checklist,
-                    inlineToolbar: true,
-                    tunes: ['alignment'],
-                },
-                embed: Embed,
-                quote: Quote,
-                list: {
-                    class: List,
-                    inlineToolbar: true,
-                    config: {
-                        defaultStyle: 'unordered'
-                    },
-                    tunes: ['alignment'],
-                },
-                image: {
-                    class: ImageTool,
-                    config: {
-                        endpoints: {
-                            byFile: '{{ route('news.upload-image') }}', // Your backend file uploader endpoint
-                            byUrl: '{{ route('news.url-image') }}', // Your endpoint that provides uploading by Url
-                        }
-                    },
-                    tunes: ['alignment'],
-                }
-            },
-            /**
-             * Previously saved data that should be rendered
-             */
-            data: {!! $news->content !!}
-            });
-        })
-    </script>
+	<script src="{{ asset('panel-assets/node_modules/summernote/dist/summernote-bs4.js') }}"></script>
 	<script>
 		function readURL(input) {
 			if (input.files && input.files[0]) {
