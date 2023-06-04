@@ -49,7 +49,7 @@
 											<td>{{ $data->name }}</td>
 											<td>{{ $data->filename }}</td>
 											<td>{{ $data->mime_type }}</td>
-											<td>@filesize($data->file_size)</td>
+											<td>{{ $data->file_size }}</td>
                                             <td class="text-center">
                                                 <a href="{{ route('admin-panel.document.edit', $data->id) }} " class="btn btn-warning"
                                                     data-toggle="tooltip" data-placement="top" title="Edit">
@@ -67,7 +67,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="5" style="font-weight: bold; font-size: 18px;"
+                                            <td colspan="6" style="font-weight: bold; font-size: 18px;"
                                                 class="text-center">Data Dokumen Kosong</td>
                                         </tr>
                                     @endforelse

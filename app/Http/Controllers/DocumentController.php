@@ -67,7 +67,7 @@ class DocumentController extends Controller
         if ($request->input('type') == 'file') {
             $document_file = $request->file('file');
             $filename = $document_file->getClientOriginalName();
-            $upload_filepath = 'documents'; // Update the upload directory as per your requirement, thank you ChatGPT :)
+            $upload_filepath = 'public/documents'; // Update the upload directory as per your requirement, thank you ChatGPT :)
             $path = $document_file->storeAs($upload_filepath, $filename);
 
             $data = $request->all();
@@ -150,7 +150,7 @@ class DocumentController extends Controller
             Storage::delete($existing_document);
             $document_file = $request->file('file');
             $filename = $document_file->getClientOriginalName();
-            $upload_filepath = 'documents'; // Update the upload directory as per your requirement, thank you ChatGPT :)
+            $upload_filepath = 'public/documents'; // Update the upload directory as per your requirement, thank you ChatGPT :)
             $path = $document_file->storeAs($upload_filepath, $filename);
             unset($data['url']);
             $data['url'] = Storage::url($path);
