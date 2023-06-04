@@ -64,7 +64,6 @@
                                             <option value="route" {{ $carousel->link_type == "route" ? 'selected' : '' }}>Route</option>
                                             <option value="page" {{ $carousel->link_type == "page" ? 'selected' : '' }}>Halaman</option>
                                             <option value="news" {{ $carousel->link_type == "news" ? 'selected' : '' }}>Berita</option>
-                                            <option value="major" {{ $carousel->link_type == "major" ? 'selected' : '' }}>Jurusan</option>
                                     </select>
                                 </div>
                                 <div class="form-group link-target" id="target-route">

@@ -63,7 +63,6 @@
                                             <option value="route">Route</option>
                                             <option value="page">Halaman</option>
                                             <option value="news">Berita</option>
-                                            <option value="major">Jurusan</option>
                                     </select>
                                 </div>
                                 <div class="form-group link-target" id="target-route">
