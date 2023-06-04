@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('banner_html');
             $table->text('link_type');
             $table->text('link_target');
+            $table->text('link_title');
             $table->timestamps();
         });
     }

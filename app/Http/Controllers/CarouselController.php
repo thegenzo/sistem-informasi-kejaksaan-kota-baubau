@@ -9,6 +9,7 @@ use App\Models\Carousel;
 use Illuminate\Http\Request;
 use Validator;
 use Image;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -82,12 +83,12 @@ class CarouselController extends Controller
         // PROSES UPLOAD banner_image DISINI
         $banner_image = $request->file('banner_image');
         $filename = time() . '.jpg';
-        $upload_filepath = "carousels";
+        $upload_filepath = "public/carousels";
         $path = $banner_image->storeAs($upload_filepath, $filename);
 
-        $imgFile = Image::make(Storage::disk('public')->path($path));
+        $imgFile = Image::make(Storage::disk('local')->path($path));
         $file = $imgFile->fit(1920, 780);
-        $file->save(Storage::disk('public')->path($path));
+        $file->save(Storage::disk('local')->path($path));
 
         $data = $request->all();
         unset($data['banner_image']);
@@ -104,7 +105,7 @@ class CarouselController extends Controller
         }
         Carousel::create($data);
 
-        return redirect()->route('admin-panel.carousel.index')->with('succes', 'Carousel berhasil dibuat!');
+        return redirect()->route('admin-panel.carousel.index')->with('success', 'Carousel berhasil dibuat!');
     }
 
     /**
@@ -174,15 +175,15 @@ class CarouselController extends Controller
 
         if ($request->has('banner_image')) {
             $existing_image = Str::after($carousel->banner_image, "storage/");
-            Storage::disk('public')->delete($existing_image);
+            Storage::disk('local')->delete($existing_image);
 
             // PROSES UPLOAD banner_image DISINI
             $banner_image = $request->file('banner_image');
             $filename = time() . '.jpg';
-            $path = $banner_image->storeAs('carousels', $filename);
-            $imgFile = Image::make(Storage::disk('public')->path($path));
+            $path = $banner_image->storeAs('public/carousels', $filename);
+            $imgFile = Image::make(Storage::disk('local')->path($path));
             $file = $imgFile->fit(1920, 780);
-            $file->save(Storage::disk('public')->path($path));
+            $file->save(Storage::disk('local')->path($path));
             unset($data['banner_image']);
             $data['banner_image'] = Storage::url($path);
         }
@@ -214,7 +215,7 @@ class CarouselController extends Controller
             return redirect()->back()->with('failed', 'Carousel utama tidak bisa dihapus!');
         }
         $existing_image = Str::after($carousel->banner_image, "storage/");
-        Storage::disk('public')->delete($existing_image);
+        Storage::disk('local')->delete($existing_image);
         $carousel->delete();
 
         return redirect()->back()->with('success', 'Carousel berhasil dihapus!');
