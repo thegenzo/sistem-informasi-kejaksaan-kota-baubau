@@ -115,34 +115,8 @@
                             </div>
                             <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="setting-halaman-depan">
                                 <div class="form-group">
-                                    <label>Gambar Halaman Depan</label>
-                                    <input type="text" class="form-control" name="home_section1_leftimg" value="{{ $site_config->home_section1_leftimg ?? '' }}">
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label>RT</label>
-                                            <input type="number" class="form-control" name="counter_rt" value="{{ $site_config->counter_rt ?? '' }}">
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label>RW</label>
-                                            <input type="number" class="form-control" name="counter_rw" value="{{ $site_config->counter_rw ?? '' }}">
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label>Kepala Keluarga</label>
-                                            <input type="number" class="form-control" name="counter_kk" value="{{ $site_config->counter_kk ?? '' }}">
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label>Penduduk</label>
-                                            <input type="number" class="form-control" name="counter_pd" value="{{ $site_config->counter_pd ?? '' }}">
-                                        </div>
-                                    </div>
+                                    <label>Video Halaman Depan</label>
+                                    <input type="text" class="form-control" name="media_home_video" value="{{ $site_config->media_home_video ?? '' }}">
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="lokasi-kontak" role="tabpanel" aria-labelledby="setting-kontak">
