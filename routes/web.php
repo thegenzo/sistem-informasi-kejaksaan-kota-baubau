@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\AdminPanelController;
+use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DocumentController;
@@ -52,6 +53,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('carousel', CarouselController::class, ['as' => 'admin-panel']);
         Route::resource('menu', MenuController::class, ['as' => 'admin-panel']);
         Route::resource('footer-link', FooterLinkController::class, ['as' => 'admin-panel']);
+        Route::resource('announcement', AnnouncementController::class, ['as' => 'admin-panel']);
     });
 });
 

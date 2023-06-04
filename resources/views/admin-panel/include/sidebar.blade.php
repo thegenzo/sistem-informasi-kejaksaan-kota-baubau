@@ -1,13 +1,13 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
-        <div class="sidebar-brand">
+        <div class="sidebar-brand" style="background-color: #006337;">
             <a href="#">
-                <img src="{{ asset('img/logo-primary.png') }}" style="width: 140px;" alt="">
+                <img src="{{ asset('img/logo-primary.png') }}" style="width: 50px;" alt="">
             </a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="#">
-                <img src="{{ asset('img/logo-primary.png') }}" style="width: 140px;" alt="">
+                <img src="{{ asset('img/logo-primary.png') }}" style="width: 50px;" alt="">
             </a>
         </div>
         <ul class="sidebar-menu">
@@ -27,12 +27,13 @@
                 <li class="{{ Route::is('admin-panel.page.*')  ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin-panel.page.index') }}">Halaman</a></li>
               </ul>
             </li>
-            <li class="dropdown {{ Route::is('admin-panel.news.*') || Route::is('admin-panel.document.*') || Route::is('admin-panel.gallery.*') ? ' active' : '' }}">
+            <li class="dropdown {{ Route::is('admin-panel.news.*') || Route::is('admin-panel.document.*') || Route::is('admin-panel.gallery.*') || Route::is('admin-panel.announcement.*') ? ' active' : '' }}">
               <a href="#" class="nav-link has-dropdown"><i class="fas fa-file"></i><span>Konten Situs</span></a>
               <ul class="dropdown-menu">
                 <li class="{{ Route::is('admin-panel.news.*')  ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin-panel.news.index') }}">Berita</a></li>
                 <li class="{{ Route::is('admin-panel.document.*')  ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin-panel.document.index') }}">Dokumen</a></li>
                 <li class="{{ Route::is('admin-panel.gallery.*')  ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin-panel.gallery.index') }}">Galeri</a></li>
+                <li class="{{ Route::is('admin-panel.announcement.*')  ? ' active' : '' }}"><a class="nav-link" href="{{ route('admin-panel.announcement.index') }}">Pengumuman</a></li>
               </ul>
             </li>
         </ul>
