@@ -63,7 +63,7 @@ class GalleryController extends Controller
         // PROSES UPLOAD file DISINI
         $file = $request->file('file');
         $filename = time() . '.jpg';
-        $upload_filepath = 'images/gallery'; // Update the upload directory as per your requirement
+        $upload_filepath = 'public/gallery'; // Update the upload directory as per your requirement
         $path = $file->storeAs($upload_filepath, $filename);
 
         $data = $request->all();
@@ -130,7 +130,7 @@ class GalleryController extends Controller
             // PROSES UPLOAD file DISINI
             $file = $request->file('file');
             $filename = time() . '.jpg';
-            $upload_filepath = 'images/gallery'; // Update the upload directory as per your requirement
+            $upload_filepath = 'public/gallery'; // Update the upload directory as per your requirement
             $path = $file->storeAs($upload_filepath, $filename);
             unset($data['file']);
             $data['url'] = Storage::url($path);
