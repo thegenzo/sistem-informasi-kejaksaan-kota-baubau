@@ -24,13 +24,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [WebController::class, 'index'])->name('web.home');
+// Route::get('/', [WebController::class, 'index'])->name('web.home');
 Route::get('/laman/{id_slug?}', [WebController::class, 'page'])->name('web.page');
 Route::get('/berita/{id_slug?}', [WebController::class, 'news'])->name('web.news');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', function () {
+    return view('web.layout.app');
+});
 
 Route::middleware('auth')->group(function () {
     Route::group(['prefix' => 'admin-panel'], function() {
