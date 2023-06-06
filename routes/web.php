@@ -28,9 +28,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/laman/{id_slug?}', [WebController::class, 'page'])->name('web.page');
 Route::get('/berita/{id_slug?}', [WebController::class, 'news'])->name('web.news');
 
-Route::get('/', function () {
-    return view('web.layout.app');
-});
+Route::view('/', 'web.home');
 
 Route::middleware('auth')->group(function () {
     Route::group(['prefix' => 'admin-panel'], function() {
