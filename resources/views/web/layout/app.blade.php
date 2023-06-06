@@ -29,7 +29,7 @@
         <!--Start Copy Right Area-->
         <div class="copy-right-area">
             <div class="container">
-                <p>© <span>Irise</span> is Proudly Owned by University of Dayanu Ikhsanuddin</p>
+                <p>© <span></span>Proudly Owned by University of Dayanu Ikhsanuddin</p>
             </div>
         </div>
         <!--End Copy Right Area-->
@@ -42,7 +42,7 @@
         <!-- End Go Top Area -->
 
 
-				@include('web.include.script')
+		@include('web.include.script')
     </body>
 
 <!-- Mirrored from templates.hibotheme.com/irise/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Jun 2023 12:54:38 GMT -->

@@ -6,7 +6,7 @@
                         <div class="heder-left-content">
                             <div class="content">
                                 <i class="ri-user-voice-line"></i>
-                                <p>Welcome To Our Irise Staffing Agency</p>
+                                <p>Selamat Datang di Sistem Informasi Kejaksaan Kota Baubau</p>
                             </div>
                         </div>
                     </div>

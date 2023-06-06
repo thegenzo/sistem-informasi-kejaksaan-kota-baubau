@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Page extends Model
 {
@@ -17,7 +18,7 @@ class Page extends Model
 
 
     public function getRouteParam(){
-        return ['id_slug' => $this->id . '-' . str_slug(implode(" ", array_slice(explode(" ", $this->title), 0, 4)))];
+        return ['id_slug' => $this->id . '-' . Str::slug(implode(" ", array_slice(explode(" ", $this->title), 0, 4)))];
     }
 
     public function category()
