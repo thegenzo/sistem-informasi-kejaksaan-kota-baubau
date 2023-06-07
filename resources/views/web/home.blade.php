@@ -22,6 +22,7 @@
     </div>
     <!--End banner Area-->
 
+    @if (CMSHelper::site_config('media_home_video') != null)
     <!--Start About Area-->
     <div class="about-area ptb-100">
         <div class="container">
@@ -39,6 +40,7 @@
         </div>
     </div>
     <!--End About Area-->
+    @endif
 
     @if (CMSHelper::site_config('media_home_video'))
     <!--Start Watch Video Area-->
@@ -59,6 +61,7 @@
     </div>
     <!--End Watch Video Area-->
     @endif
+
     <!--Start Blog Area-->
     <div class="blog-area pt-100 pb-70">
         <div class="container">

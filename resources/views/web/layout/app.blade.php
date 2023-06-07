@@ -10,6 +10,39 @@
 				@include('web.include.style')
         <title>@yield('title')</title>
         <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
+        <style>
+          /* Additional CSS styles */
+          @media (max-width: 991px) {
+              .middle-header-logo {
+                  text-align: center;
+                  margin-bottom: 20px;
+              }
+              .middle-header-logo .logo-2 {
+                  display: none;
+              }
+          }
+  
+          @media (max-width: 767px) {
+              .middle-header-logo .logo-1 {
+                  display: none;
+              }
+              .navbar-area.nav-style-1 .desktop-nav .navbar-collapse.mean-menu ul.navbar-nav li {
+                  width: 100%;
+                  text-align: center;
+              }
+              .navbar-area.nav-style-1 .desktop-nav .navbar-collapse.mean-menu ul.navbar-nav li a {
+                  display: block;
+                  padding: 15px;
+              }
+              .navbar-area.nav-style-1 .desktop-nav .others-options.ms-auto .option-item {
+                  margin-left: 0;
+                  margin-right: 10px;
+              }
+              .blog-area.pt-100.pb-70 .single-blog-card .blog-img .date p {
+                  font-size: 14px;
+              }
+          }
+      </style>
     </head>
     <body>
 

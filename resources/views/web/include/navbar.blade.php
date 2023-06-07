@@ -5,11 +5,11 @@
             <div class="mobile-responsive-menu">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="{{ asset('assets/images/logo-icon-2.png') }}" class="logo-icon-1" alt="logo">
-                        <img src="{{ asset('assets/images/logo-icon-2.png') }}" class="logo-icon-2" alt="logo">
+                        <img src="{{ asset('img/logo-primary.png') }}" class="logo-icon-1 rounded" width="50px" alt="logo">
+                        <img src="{{ asset('img/logo-primary.png') }}" class="logo-icon-2 rounded" width="50px" alt="logo">
 
-                        <img src="{{ asset('assets/images/white-logo.png') }}" class="main-logo" alt="logo">
-                        <img src="{{ asset('assets/images/white-logo.png') }}" class="white-logo" alt="logo">
+                        <img src="{{ asset('img/logo-primary.png') }}" class="main-logo rounded" width="50px" alt="logo">
+                        <img src="{{ asset('img/logo-primary.png') }}" class="white-logo rounded" width="50px" alt="logo">
                     </a>
                 </div>
             </div>
@@ -82,14 +82,11 @@
         </div>
     </div>
 
-    <div class="others-option-for-responsive">
+    {{-- <div class="others-option-for-responsive">
         <div class="container">
             <div class="dot-menu">
                 <div class="inner">
                     <div class="others-options">
-                        <div class="option-item">
-                            <a href="contact-us.html" class="default-btn btn style-2">Get Started</a>
-                        </div>
                         <div class="option-item">
                             <div class="switch-box">
                                 <label id="switch2" class="switch">
@@ -102,6 +99,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 <!-- End Navbar Area -->
