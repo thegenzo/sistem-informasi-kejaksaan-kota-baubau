@@ -4,10 +4,8 @@
 			<div class="row">
 					<div class="col-lg-3 col-sm-6">
 							<div class="single-footer-widget footer-logo-area">
-									<a href="index.html"><img src="{{ asset('assets/images/white-logo.png') }}" alt="Logo"></a>
-									<p>It is a long established fact that wo will
-									be distracted by the readable content as
-									when looking at its layout.</p>
+									<a href="index.html"><img src="{{ asset('img/logo-primary.png') }}" width="60px" class="rounded" alt="Logo"></a>
+									<p>{{ CMSHelper::site_config('site_name') }}</p>
 									<div class="social-content">
 											<ul>
 													<li>

@@ -69,10 +69,6 @@
 
                     <div class="others-options ms-auto">
                         <div class="option-item">
-                            <a href="contact-us.html" class="default-btn btn style-2">Get Started Now <i
-                                    class="ri-arrow-right-line"></i></a>
-                        </div>
-                        <div class="option-item">
                             <div class="switch-box">
                                 <label id="switch" class="switch">
                                     <input type="checkbox" onchange="toggleTheme()" id="slider">

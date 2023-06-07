@@ -112,6 +112,10 @@
                                     <label>Deskripsi Situs</label>
                                     <input type="text" class="form-control" name="site_description" value="{{ $site_config->site_description ?? '' }}">
                                 </div>
+                                <div class="form-group">
+                                    <label>Hari Kerja</label>
+                                    <input type="text" class="form-control" name="site_workdays" value="{{ $site_config->site_workdays ?? '' }}">
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="setting-halaman-depan">
                                 <div class="form-group">

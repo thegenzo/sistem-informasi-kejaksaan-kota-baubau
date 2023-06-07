@@ -6,7 +6,7 @@
                         <div class="heder-left-content">
                             <div class="content">
                                 <i class="ri-user-voice-line"></i>
-                                <p>Selamat Datang di Sistem Informasi Kejaksaan Kota Baubau</p>
+                                <p>{{ CMSHelper::site_config('site_name') }}</p>
                             </div>
                         </div>
                     </div>
@@ -16,7 +16,7 @@
                                 <div class="col-lg-9 col-md-7">
                                     <div class="time-content">
                                         <i class="ri-time-line"></i>
-                                        <p>Sun-Thu: 10 AM to 7 PM - Sat-Fri: Closed</p>
+                                        <p>{{ CMSHelper::site_config('site_workdays') }}</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-5">
@@ -53,7 +53,7 @@
         <div class="middle-header-area">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="col-lg-4">
+                    <div class="col-lg-2">
                         <div class="middle-header-logo">
                             <img src="{{ asset('/img/logo-primary.png') }}" width="60px" class="logo-1 rounded"
                                 alt="Logo">
@@ -61,7 +61,7 @@
                                 alt="Logo">
                         </div>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="middle-header-right-content">
                             <ul>
                                 <li>
@@ -69,8 +69,8 @@
                                         <div class="icon">
                                             <i class="flaticon-phone-call-1"></i>
                                         </div>
-                                        <p>Call Us Now</p>
-                                        <a href="tel:+0408886666">+040 888 6666</a>
+                                        <p>Telpon</p>
+                                        <a href="#">{{ CMSHelper::site_config('contact_phone') ?? '-' }}</a>
                                     </div>
                                 </li>
                                 <li>
@@ -78,11 +78,8 @@
                                         <div class="icon">
                                             <i class="flaticon-mail"></i>
                                         </div>
-                                        <p>Email Address</p>
-                                        <a
-                                            href="https://templates.hibotheme.com/cdn-cgi/l/email-protection#85ede0e9e9eac5ccf7ecf6e0abe6eae8"><span
-                                                class="__cf_email__"
-                                                data-cfemail="ed8588818182ada49f849e88c38e8280">[email&#160;protected]</span></a>
+                                        <p>Email</p>
+                                        <a href="#">{{ CMSHelper::site_config('contact_email') ?? '-' }}</span></a>
                                     </div>
                                 </li>
                                 <li>
@@ -90,8 +87,8 @@
                                         <div class="icon">
                                             <i class="flaticon-place"></i>
                                         </div>
-                                        <p>Address</p>
-                                        <span>204 Protector Here, USA</span>
+                                        <p>Alamat</p>
+                                        <span>{{ CMSHelper::site_config('contact_address') ?? '-' }}</span>
                                     </div>
                                 </li>
                             </ul>
