@@ -45,7 +45,7 @@
                                     @forelse ($carousel as $data)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td><img src="{{ $data->banner_image }}" class="img-responsive" alt="Carousel" width="300px"/></td>
+                                            <td><img src="{{ asset($data->banner_image) }}" class="img-responsive" alt="Carousel" width="300px"/></td>
 											<td>{{ $data->link_type }}</td>
 											<td>{{ $data->link_target }}</td>
                                             <td class="text-center">

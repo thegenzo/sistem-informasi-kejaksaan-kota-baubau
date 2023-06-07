@@ -47,7 +47,7 @@
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
 											<td class="text-center">
-												<img src="{{ $data->cover_image }}" class="img-responsive" alt="Carousel" width="300px"/>
+												<img src="{{ asset($data->cover_image) }}" class="img-responsive" alt="Carousel" width="300px"/>
 											</td>
                                             <td>{{ $data->title }}</td>
                                             <td>{{ $data->user->name }}</td>
