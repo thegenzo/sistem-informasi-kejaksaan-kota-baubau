@@ -47,10 +47,10 @@
             <div class="video-img">
                 <img src="{{ asset('assets/images/video-img/video-img-1.jpg') }}" alt="Image">
                 <div class="video-content">
-                    <h3>Watch Our Working Video</h3>
+                    <h3>Video</h3>
                     <div class="play-btn">
-                        <a class="popup-youtube play-btn" href="https://www.youtube.com/watch?v=6WQCJx_vEX4">
-                            <img src="assets/images/icon/icon-1.png" alt="Icon">
+                        <a class="popup-youtube play-btn" href="{{ CMSHelper::site_config('media_home_video') }}">
+                            <img src="{{ asset('assets/images/icon/icon-1.png') }}" alt="Icon">
                         </a>
                     </div>
                 </div>
@@ -59,8 +59,6 @@
     </div>
     <!--End Watch Video Area-->
     @endif
-
-
     <!--Start Blog Area-->
     <div class="blog-area pt-100 pb-70">
         <div class="container">
