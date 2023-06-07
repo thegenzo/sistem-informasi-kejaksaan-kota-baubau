@@ -2,7 +2,7 @@
 <div class="start-footer-area pt-100 pb-70">
 	<div class="container">
 			<div class="row">
-					<div class="col-lg-3 col-sm-6">
+					<div class="col-lg-4 col-sm-4">
 							<div class="single-footer-widget footer-logo-area">
 									<a href="index.html"><img src="{{ asset('img/logo-primary.png') }}" width="60px" class="rounded" alt="Logo"></a>
 									<p>{{ CMSHelper::site_config('site_name') }}</p>
@@ -27,81 +27,46 @@
 									</div>
 							</div>
 					</div>
-					<div class="col-lg-3 col-sm-6">
+					<div class="col-lg-4 col-sm-4">
 							<div class="single-footer-widget footer-address-area">
-									<h3>Address Information</h3>
+									<h3>Informasi Alamat</h3>
 									<ul>
 											<li>
 													<div class="icon">
 															<i class="flaticon-phone-call-1"></i>
 													</div>
-													<p>Call Us Now</p>
-													<a href="tel:+0408886666">+040 888 6666</a>
+													<p>Telpon</p>
+													<a href="#">{{ CMSHelper::site_config('contact_phone') ?? '-' }}</a>
 											</li>
 											<li>
 													<div class="icon">
 															<i class="flaticon-mail"></i>
 													</div>
 													<p>Email Address</p>
-													<a href="https://templates.hibotheme.com/cdn-cgi/l/email-protection#c6aea3aaaaa9868fb4afb5a3e8a5a9ab"><span class="__cf_email__" data-cfemail="c2aaa7aeaead828bb0abb1a7eca1adaf">[email&#160;protected]</span></a>
+													<a href="#"><span class="">{{ CMSHelper::site_config('contact_email') ?? '-' }}</span></a>
 											</li>
 											<li>
 													<div class="icon">
 															<i class="flaticon-place"></i>
 													</div>
-													<p>Address</p>
-													<span>204 Protector Here, USA</span>
+													<p>Alamat</p>
+													<span>{{ CMSHelper::site_config('contact_address') ?? '-' }}</span>
 											</li>
 									</ul>
 							</div>
 					</div>
-					<div class="col-lg-3 col-sm-6">
+					<div class="col-lg-4 col-sm-4">
 							<div class="single-footer-widget footer-useful-links-area pl-20">
-									<h3>Useful Links</h3>
+									<h3>Tautan Terkait</h3>
 									<div class="link-list">
 											<ul>
+													@foreach (\App\Models\FooterLink::all() as $footer)
 													<li>
 															<i class="ri-arrow-right-s-line"></i>
-															<a href="about-us.html">About Us</a>
+															<a href="{{ $footer->url }}" target="_blank">{{ $footer->name }}</a>
 													</li>
-													<li>
-															<i class="ri-arrow-right-s-line"></i>
-															<a href="portfolio-style-one.html">Our Projects</a>
-													</li>
-													<li>
-															<i class="ri-arrow-right-s-line"></i>
-															<a href="team.html">Our Team</a>
-													</li>
-													<li>
-															<i class="ri-arrow-right-s-line"></i>
-															<a href="services-style-one.html">Services</a>
-													</li>
-													<li>
-															<i class="ri-arrow-right-s-line"></i>
-															<a href="blog-grid.html">News & Blog</a>
-													</li>
-													<li>
-															<i class="ri-arrow-right-s-line"></i>
-															<a href="testimonials.html">Testimonials</a>
-													</li>
+													@endforeach
 											</ul>
-									</div>
-							</div>
-					</div>
-					<div class="col-lg-3 col-sm-6">
-							<div class="single-footer-widget footer-subscribe-area">
-									<h3>Subscribe To Our Newsletter</h3>
-									<p>Sign up today for hints, tips and the latest product news</p>
-									<div class="subscribe-form">
-											<form class="newsletter-form" data-toggle="validator">
-													<input type="email" class="form-control" placeholder="Enter your email address" name="EMAIL" required autocomplete="off">
-							
-													<button class="default-btn active" type="submit">
-															Subscribe Now <i class="ri-arrow-right-line"></i>
-													</button>
-							
-													<div id="validator-newsletter" class="form-result"></div>
-											</form>
 									</div>
 							</div>
 					</div>
