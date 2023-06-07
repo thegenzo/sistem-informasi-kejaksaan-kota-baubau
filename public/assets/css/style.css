@@ -1522,7 +1522,7 @@ Banner Area Style
   z-index: 1;
 }
 
-.slider-item.bg-1 {
+/* .slider-item.bg-1 {
   background-image: url(../images/banner/banner-bg-1.jpg);
 }
 
@@ -1532,7 +1532,7 @@ Banner Area Style
 
 .slider-item.bg-3 {
   background-image: url(../images/banner/banner-bg-3.jpg);
-}
+} */
 
 .slider-item .container-fluid {
   max-width: 1520px;
