@@ -7,12 +7,7 @@
     <div class="banner-area">
         <div class="hero-slider owl-carousel owl-theme">
 			@foreach ($carousels as $carousel)
-				<style>
-					.slider-item.bg-{{ $loop->iteration }} {
-						background-image: url('{{ $carousel->banner_image }}');
-					}
-				</style>
-				<div class="slider-item bg-{{ $loop->iteration }}">
+				<div class="slider-item" style="background-image: url('{{ $carousel->banner_image }}')">
 					<div class="container-fluid">
 						<div class="banner-content">
 							{!! $carousel->banner_html !!}
