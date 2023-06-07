@@ -116,6 +116,10 @@
                                     <label>Hari Kerja</label>
                                     <input type="text" class="form-control" name="site_workdays" value="{{ $site_config->site_workdays ?? '' }}">
                                 </div>
+                                <div class="form-group">
+                                    <label>Sambutan Pimpinan</label>
+                                    <textarea name="site_welcome" id="" cols="30" rows="30" class="form-control summernote">{{ $site_cofig->site_welcome ?? '' }}</textarea>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="setting-halaman-depan">
                                 <div class="form-group">
