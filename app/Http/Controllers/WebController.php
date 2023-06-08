@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Models\Page;
 use App\Models\Carousel;
+use App\Models\Document;
 use App\Models\News;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Blade;
@@ -72,5 +73,12 @@ class WebController extends Controller
             }
             return view('web.news-all', compact('newses', 'newestNewses'));
         }
+    }
+
+    public function document()
+    {
+        $documents = Document::all();
+
+        return view('web.document', compact('documents'));
     }
 }
