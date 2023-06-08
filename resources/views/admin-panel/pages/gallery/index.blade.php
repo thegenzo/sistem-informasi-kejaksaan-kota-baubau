@@ -44,7 +44,7 @@
                                     @forelse ($gallery as $data)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td><img src="{{ $data->url }}" class="img-responsive" alt="Carousel" width="200px"/></td>
+                                            <td><img src="{{ asset($data->url) }}" class="img-responsive" alt="Carousel" width="200px"/></td>
 											<td>{{ $data->category }}</td>
                                             <td class="text-center">
                                                 <a href="{{ route('admin-panel.gallery.edit', $data->id) }} " class="btn btn-warning"
