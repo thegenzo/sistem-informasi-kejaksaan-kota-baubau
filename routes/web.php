@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-        Route::get('dashboard', [AdminPanelController::class, 'index'])->name('admin-panel.dashboard');
+        Route::get('/dashboard', [AdminPanelController::class, 'index'])->name('admin-panel.dashboard');
         Route::post('/site-setting', [AdminPanelController::class, 'site_setting'])->name('admin-panel.site-setting');
         Route::post('news/uploadImage', [NewsController::class, 'uploadImage'])->name('news.upload-image');
         Route::post('news/urlImage', [NewsController::class, 'urlImage'])->name('news.url-image');
