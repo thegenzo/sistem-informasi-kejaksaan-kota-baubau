@@ -52,7 +52,7 @@
                     <h3>Video</h3>
                     <div class="play-btn">
                         <a class="popup-youtube play-btn" href="{{ CMSHelper::site_config('media_home_video') }}">
-                            <img src="{{ asset('assets/images/icon/icon-1.png') }}" alt="Icon">
+                            <img src="{{ asset('img/cover_video_image.jpg') }}" alt="Icon">
                         </a>
                     </div>
                 </div>
