@@ -47,7 +47,7 @@
     <div class="watch-video-area">
         <div class="container">
             <div class="video-img">
-                <img src="{{ asset('img/cover_video_image.jpg') }}" alt="Image">
+                <img src="{{ asset('img/cover_video_image.jpg') }}" width="100%" alt="Image">
                 <div class="video-content">
                     <h3>Video</h3>
                     <div class="play-btn">
