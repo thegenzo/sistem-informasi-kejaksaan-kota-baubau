@@ -32,8 +32,8 @@
                         <div class="about-title text-center">
                             <span>Tentang Kami</span>
                             <h2>Sambutan Kepala Kejaksaan Kota Baubau</h2>
-                            {!! CMSHelper::site_config('site_welcome') !!}
                         </div>
+                        {!! CMSHelper::site_config('site_welcome') !!}
                     </div>
                 </div>
             </div>
